@@ -131,3 +131,4 @@ dmypy.json
 #ignore the log files
 *.log
 .vscode/settings.json
+manual_test.ipynb
