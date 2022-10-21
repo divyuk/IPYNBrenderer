@@ -1,6 +1,6 @@
 import pytest
-from IPYNBrenderer import get_time_info
-from IPYNBrenderer.custom_exception import InvalidURLException
+from onipynbrenderer import get_time_info
+from onipynbrenderer.custom_exception import InvalidURLException
 
 good_URL_data = [
     ("https://youtu.be/roO5VGxOw2s", 0),
