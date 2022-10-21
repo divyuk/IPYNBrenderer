@@ -1,4 +1,3 @@
-from certifi import where
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as f:
@@ -17,7 +16,8 @@ setuptools.setup(
     author=AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
     description="A small python package",
-    long_description="text/markdown",
+    long_description=long_description,
+    long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_url={
         "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
