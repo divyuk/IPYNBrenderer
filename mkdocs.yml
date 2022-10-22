@@ -3,6 +3,7 @@ site_name: onipynbrenderer
 # defeine TOC or order of website-
 nav:
   - Home: index.md
+  - API Reference : APIreference.md
 
 site_author: Divyanshu Kesarwani
 site_description: >-
