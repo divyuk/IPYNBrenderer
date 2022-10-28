@@ -5,7 +5,7 @@
 ??? note "example"
     ### Short example
     ```python
-    from IPYNBrenderer import render_YouTube_video
+    from onipynbrenderer import render_YouTube_video
     URL = "https://www.youtube.com/watch?v=Za2BYPj3aEQ"
     render_YouTube_video(URL=URL, width = 780, height = 480)
     ```
@@ -26,7 +26,7 @@
 ??? note "example"
     ### Short example
     ```python
-    from IPYNBrenderer import render_site
+    from onipynbrenderer import render_site
     URL = "http://pytorch.org/"
     render_site(URL = URL, width = "90%", height = "500")
     ```
