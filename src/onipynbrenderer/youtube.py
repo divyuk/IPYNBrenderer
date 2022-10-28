@@ -16,11 +16,16 @@ def get_time_info(URL: str) -> int:
 
     try:
         split_val = URL.split("=")
-        if len(split_val) > 3:
+        if len(split_val) > 5:
             raise InvalidURLException
         if "watch" in URL:
             if "&t" in URL:
                 vid_id, time = split_val[-2][:-2], int(split_val[-1][:-1])
+                _verify_vid_id_len(vid_id)
+                logger.info(f"video starts at: {time}")
+                return time
+            elif "list" in URL:
+                vid_id, time = split_val[1][:-5], 0
                 _verify_vid_id_len(vid_id)
                 logger.info(f"video starts at: {time}")
                 return time
@@ -30,8 +35,18 @@ def get_time_info(URL: str) -> int:
                 logger.info(f"video starts at: {time}")
                 return time
         else:
-            if "=" in URL and "?t" in URL:
+            if "=" in URL and "&t" in URL and "list" in URL:
+                vid_id, time = split_val[0].split("/")[-1][:-5], int(split_val[-1])
+                _verify_vid_id_len(vid_id)
+                logger.info(f"video starts at: {time}")
+                return time
+            elif "=" in URL and "?t" in URL:
                 vid_id, time = split_val[0].split("/")[-1][:-2], int(split_val[-1])
+                _verify_vid_id_len(vid_id)
+                logger.info(f"video starts at: {time}")
+                return time
+            elif "=" in URL and "list" in URL:
+                vid_id, time = split_val[0].split("/")[-1][:-5], 0
                 _verify_vid_id_len(vid_id)
                 logger.info(f"video starts at: {time}")
                 return time
@@ -72,3 +87,8 @@ def render_YouTube_video(URL: str, width: int = 780, height: int = 600) -> str:
             raise InvalidURLException
     except Exception as e:
         raise e
+
+
+if __name__ == '__main__':
+    URLp1 = "https://www.youtube.com/watch?v==roO5VGxOw2s&t=22s"
+    render_YouTube_video(URLp1)
