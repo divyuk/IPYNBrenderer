@@ -1,5 +1,5 @@
 # IPYNBrenderer
-IPYNBrenderer is a Python package designed to render YouTube tutorial videos and reference websites directly into Colab or Jupyter notebooks, making it convenient for you to reference them in the future.
+IPYNBrenderer is a Python package designed to render YouTube tutorial videos and reference websites directly into Jupyter notebooks, making it convenient for you to reference them in the future.
 
 [IPYNBrenderer Documentation](https://divyuk.github.io/onipynbrenderer/)
 
